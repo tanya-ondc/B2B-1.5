@@ -1,0 +1,8 @@
+category:
+  $ref: "./category.yaml"
+fulfillments:
+  $ref: "./fulfillments.yaml"
+incoterm:
+  $ref: "./incoterms.yaml"
+delivery_duty:
+  $ref: "./delivery_duty.yaml"
