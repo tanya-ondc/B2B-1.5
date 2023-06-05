@@ -1,6 +1,0 @@
-examples:
-  $ref: "./examples/on-demand.yaml"
-enum:
-  $ref: "./enums/index.yaml"
-tags:
-  $ref: "./tags/TagGroup.yaml"

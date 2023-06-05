@@ -1,0 +1,9 @@
+fulfillments:
+  tags:
+    value:
+      - code: CIF
+        description: about the enum
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: EXW
+        description: about the enum
+        reference: <PR/Issue/Discussion Links md format text>
