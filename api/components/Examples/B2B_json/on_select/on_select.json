@@ -26,7 +26,7 @@
         "items":
         [
           {
-            "fulfillment_id":"F1",
+            "fulfillment_ids": ["F1"],
             "id":"I1"
           }
         ],

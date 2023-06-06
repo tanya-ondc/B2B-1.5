@@ -36,3 +36,4 @@ on_status:
 on_update:
   examples:
     - $ref: ./B2B/on_update/on_update.yaml
+    - $ref: ./B2B/on_update/on_update_fulfillments.yaml

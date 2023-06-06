@@ -231,7 +231,7 @@ paths:
                     country: IND
                     city: std:080
                     action: select
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -341,7 +341,7 @@ paths:
                     country: IND
                     city: std:080
                     action: init
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -359,7 +359,8 @@ paths:
                         ttl: 1D
                       items:
                         - id: I1
-                          fulfillment_id: F1
+                          fulfillment_ids:
+                            - F1
                           quantity:
                             count: 200
                           add-ons:
@@ -502,7 +503,7 @@ paths:
                     country: IND
                     city: std:080
                     action: confirm
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -521,7 +522,8 @@ paths:
                           - id: L1
                       items:
                         - id: I1
-                          fulfillment_id: F1
+                          fulfillment_ids:
+                            - F1
                           quantity:
                             count: 200
                       billing:
@@ -674,7 +676,7 @@ paths:
                     country: IND
                     city: std:080
                     action: status
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -810,7 +812,7 @@ paths:
                     country: IND
                     city: std:080
                     action: update
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -960,7 +962,7 @@ paths:
                     country: IND
                     city: std:080
                     action: on_search
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -1246,7 +1248,7 @@ paths:
                     country: IND
                     city: std:080
                     action: on_select
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -1260,7 +1262,8 @@ paths:
                       provider:
                         id: P1
                       items:
-                        - fulfillment_id: F1
+                        - fulfillment_ids:
+                            - F1
                           id: I1
                       fulfillments:
                         - id: F1
@@ -1368,7 +1371,7 @@ paths:
                     country: IND
                     city: std:080
                     action: on_init
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -1385,7 +1388,8 @@ paths:
                         id: L1
                       items:
                         - id: I1
-                          fulfillment_id: F1
+                          fulfillment_ids:
+                            - F1
                           quantity:
                             count: 200
                       billing:
@@ -1526,7 +1530,7 @@ paths:
                     country: IND
                     city: std:080
                     action: on_confirm
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -1546,7 +1550,8 @@ paths:
                         rateable: true
                       items:
                         - id: I1
-                          fulfillment_id: F1
+                          fulfillment_ids:
+                            - F1
                           quantity:
                             count: 200
                       billing:
@@ -1794,7 +1799,7 @@ paths:
                     country: IND
                     city: std:080
                     action: on_update
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -1835,6 +1840,182 @@ paths:
                           beneficiary_name: xxxxx
                           bank_name: xxxx
                           branch_name: xxxx
+              e1:
+                summary: Single PO - Multiple Fulfillment
+                description: Single PO - Multiple Fulfillment
+                value:
+                  context:
+                    domain: ONDC:RET10
+                    country: IND
+                    city: std:080
+                    action: on_update
+                    core_version: 2.0.1
+                    bap_id: buyerapp.com
+                    bap_uri: https://buyerapp.com/grocery
+                    bpp_id: sellerapp.com
+                    bpp_uri: https://sellerapp.com/grocery
+                    transaction_id: T1
+                    message_id: M1
+                    timestamp: '2023-01-08T22:00:30.000Z'
+                    ttl: PT30S
+                  message:
+                    order:
+                      id: O1
+                      state: Accepted
+                      provider:
+                        id: P1
+                      items:
+                        - id: I1
+                          quantity:
+                            count: 200
+                          fulfillment_ids:
+                            - F1
+                            - F2
+                      payment:
+                        uri: https://ondc.transaction.com/payment
+                        tl_method: http/get
+                        params:
+                          currency: INR
+                          transaction_id: '3937'
+                          amount: '53600'
+                        status: PAID
+                        type: ON-ORDER
+                        collected_by: BPP
+                        '@ondc/org/buyer_app_finder_fee_type': percent
+                        '@ondc/org/buyer_app_finder_fee_amount': '0'
+                        '@ondc/org/settlement_details':
+                          - settlement_counterparty: buyer-app
+                            settlement_phase: sale-amount
+                            settlement_type: upi
+                            upi_address: gft@oksbi
+                            settlement_bank_account_no: XXXXXXXXXX
+                            settlement_ifsc_code: XXXXXXXXX
+                            beneficiary_name: xxxxx
+                            bank_name: xxxx
+                            branch_name: xxxx
+                      fulfillments:
+                        - id: F1
+                          '@ondc/org/provider_name': Loadshare
+                          state:
+                            descriptor:
+                              code: Pending
+                          type: Delivery
+                          tracking: false
+                          start:
+                            location:
+                              id: L1
+                              descriptor:
+                                name: ABC Store
+                              gps: 12.956399,77.636803
+                            time:
+                              range:
+                                start: '2023-02-03T10:00:00.000Z'
+                                end: '2023-02-03T10:30:00.000Z'
+                            instructions:
+                              name: Status for pickup
+                              short_desc: Pickup Confirmation Code
+                            contact:
+                              phone: '9886098860'
+                              email: nobody@nomail.com
+                          end:
+                            location:
+                              gps: 1.3806217468119772, 103.74636438437074
+                              address:
+                                name: 'My house #'
+                                building: My building name
+                                door: B005 aaspire heights
+                                locality: My street name
+                                city: Jurong East
+                                state: ''
+                                country: SGP
+                                area_code: '680230'
+                            time:
+                              range:
+                                start: '2023-02-07T11:00:00.000Z'
+                                end: '2023-02-07T11:30:00.000Z'
+                            instructions:
+                              name: Status for drop
+                              short_desc: Delivery Confirmation Code
+                            contact:
+                              phone: '9886098860'
+                          rateable: true
+                          tags:
+                            - descriptor:
+                                code: ITEM_DETAILS
+                              list:
+                                - descriptor:
+                                    code: ITEM_ID
+                                  value: I1
+                                - descriptor:
+                                    code: COUNT
+                                  value: '100'
+                                - descriptor:
+                                    code: MEASURE_UNIT
+                                  value: millilitre
+                                - descriptor:
+                                    code: MEASURE_VALUE
+                                  value: '500'
+                        - id: F2
+                          '@ondc/org/provider_name': Loadshare
+                          state:
+                            descriptor:
+                              code: Pending
+                          type: Delivery
+                          tracking: false
+                          start:
+                            location:
+                              id: L1
+                              descriptor:
+                                name: ABC Store
+                              gps: 12.956399,77.636803
+                            time:
+                              range:
+                                start: '2023-02-05T10:00:00.000Z'
+                                end: '2023-02-05T10:30:00.000Z'
+                            instructions:
+                              name: Status for pickup
+                              short_desc: Pickup Confirmation Code
+                            contact:
+                              phone: '9886098860'
+                              email: nobody@nomail.com
+                          end:
+                            location:
+                              gps: 1.3806217468119772, 103.74636438437074
+                              address:
+                                name: 'My house #'
+                                building: My building name
+                                door: B005 aaspire heights
+                                locality: My street name
+                                city: Jurong East
+                                state: ''
+                                country: SGP
+                                area_code: '680230'
+                            time:
+                              range:
+                                start: '2023-02-09T11:00:00.000Z'
+                                end: '2023-02-09T11:30:00.000Z'
+                            instructions:
+                              name: Status for drop
+                              short_desc: Delivery Confirmation Code
+                            contact:
+                              phone: '9886098860'
+                          rateable: true
+                          tags:
+                            - descriptor:
+                                code: ITEM_DETAILS
+                              list:
+                                - descriptor:
+                                    code: ITEM_ID
+                                  value: I1
+                                - descriptor:
+                                    code: COUNT
+                                  value: '100'
+                                - descriptor:
+                                    code: MEASURE_UNIT
+                                  value: millilitre
+                                - descriptor:
+                                    code: MEASURE_VALUE
+                                  value: '500'
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
@@ -1879,7 +2060,7 @@ paths:
                     country: IND
                     city: std:080
                     action: on_status
-                    core_version: 1.5.0
+                    core_version: 2.0.1
                     bap_id: buyerapp.com
                     bap_uri: https://buyerapp.com/grocery
                     bpp_id: sellerapp.com
@@ -1898,7 +2079,8 @@ paths:
                           - id: L1
                       items:
                         - id: I1
-                          fulfillment_id: F1
+                          fulfillment_ids:
+                            - F1
                           quantity:
                             count: 1
                       billing:
@@ -3985,31 +4167,29 @@ components:
           type: boolean
 x-enum:
   category:
-    intent:
-      item:
-        category:
-          id:
-            - code: ONDC:RET10
-              description: Grocery
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONDC:RET11
-              description: F&B
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONDC:RET12
-              description: Fashion
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONDC:RET13
-              description: BPC
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONDC:RET14
-              description: Electronics
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONDC:RET15
-              description: Home & Decor
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: ONDC:RET16
-              description: Pharma
-              reference: <PR/Issue/Discussion Links md format text>
+    category:
+      id:
+        - code: ONDC:RET10
+          description: Grocery
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:RET11
+          description: F&B
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:RET12
+          description: Fashion
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:RET13
+          description: BPC
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:RET14
+          description: Electronics
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:RET15
+          description: Home & Decor
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: ONDC:RET16
+          description: Pharma
+          reference: <PR/Issue/Discussion Links md format text>
   fulfillments:
     fulfillment:
       type:
@@ -4019,26 +4199,6 @@ x-enum:
         - code: Self-Pickup
           description: about the enum
           reference: <PR/Issue/Discussion Links md format text>
-  incoterm:
-    fulfillments:
-      tags:
-        value:
-          - code: CIF
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-          - code: EXW
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-  delivery_duty:
-    fulfillments:
-      tags:
-        value:
-          - code: DDU
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
-          - code: DDP
-            description: about the enum
-            reference: <PR/Issue/Discussion Links md format text>
 x-tags:
   intent:
     tags:
@@ -4167,9 +4327,23 @@ x-tags:
           - code: INCOTERMS
             description: Description about the tags
             reference: <PR/Issue/Discussion Links md format text>
+            value:
+              - code: CIF
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: EXW
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
           - code: DELIVERY_DUTY
             description: Description about the tags
             reference: <PR/Issue/Discussion Links md format text>
+            value:
+              - code: DDU
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: DDP
+                description: about the enum
+                reference: <PR/Issue/Discussion Links md format text>
   order:
     tags:
       - code: BUYER_ID

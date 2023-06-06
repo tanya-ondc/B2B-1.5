@@ -6,7 +6,7 @@ value:
     country: IND
     city: std:080
     action: on_select
-    core_version: 1.5.0
+    core_version: 2.0.1
     bap_id: buyerapp.com
     bap_uri: https://buyerapp.com/grocery
     bpp_id: sellerapp.com
@@ -20,7 +20,8 @@ value:
       provider:
         id: P1
       items:
-      - fulfillment_id: F1
+      - fulfillment_ids:
+        - F1
         id: I1
       fulfillments:
       - id: F1
