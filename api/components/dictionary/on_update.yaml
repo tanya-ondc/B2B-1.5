@@ -4,4 +4,4 @@ message:
   order:
     fulfillments:
       tags: 
-        $ref: "../tags/TagGroup.yaml#/order/fulfillments/tags"
+        $ref: "../tags/TagGroup.yaml#/fulfillments/tags"

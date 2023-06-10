@@ -68,15 +68,13 @@ order:
       reference: <PR/Issue/Discussion Links md format text>
       list:
         $ref: "./Tag.yaml#/buyer_id"
-  fulfillments:
-    tags:
-      - code: ITEM_DETAILS
-        description: Description about the tags
-        reference: <PR/Issue/Discussion Links md format text>
-        list:
-          $ref: "./Tag.yaml#/item_details"
 fulfillments:
   tags:
+    - code: ITEM_DETAILS
+      description: Description about the tags
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        $ref: "./Tag.yaml#/item_details"
     - code: DELIVERY_TERMS
       description: Description about the tags
       reference: <PR/Issue/Discussion Links md format text>

@@ -32,6 +32,18 @@ value:
         - F1
         quantity:
           count: 200
+        add-ons:
+        - id: '78787723'
+        tags:
+        - descriptor:
+            code: BUYER_TERMS
+          list:
+          - descriptor:
+              code: ITEM_REQ
+            value: free text on Item Customization
+          - descriptor:
+              code: PACKAGING_REQ
+            value: free text on packaging Customization
       billing:
         name: ONDC buyer
         address:
@@ -69,6 +81,16 @@ value:
               state: ''
               country: SGP
               area_code: '680230'
+        tags:
+        - descriptor:
+            code: DELIVERY_TERMS
+          list:
+          - descriptor:
+              code: INCOTERMS
+            value: CIF
+          - descriptor:
+              code: DELIVERY_DUTY
+            value: DDP
       quote:
         price:
           currency: INR
@@ -137,5 +159,12 @@ value:
           beneficiary_name: xxxxx
           bank_name: xxxx
           branch_name: xxxx
+      tags:
+      - code: buyer_id
+        list:
+        - code: buyer_id_code
+          value: gst
+        - code: buyer_id_no
+          value: xxxxxxxxxxxxxxx
       created_at: '2023-02-03T09:30:00.000Z'
       updated_at: '2023-02-03T09:30:00.000Z'

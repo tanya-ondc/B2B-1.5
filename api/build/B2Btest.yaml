@@ -544,6 +544,18 @@ paths:
                             - F1
                           quantity:
                             count: 200
+                          add-ons:
+                            - id: '78787723'
+                          tags:
+                            - descriptor:
+                                code: BUYER_TERMS
+                              list:
+                                - descriptor:
+                                    code: ITEM_REQ
+                                  value: free text on Item Customization
+                                - descriptor:
+                                    code: PACKAGING_REQ
+                                  value: free text on packaging Customization
                       billing:
                         name: ONDC buyer
                         address:
@@ -581,6 +593,16 @@ paths:
                                 state: ''
                                 country: SGP
                                 area_code: '680230'
+                          tags:
+                            - descriptor:
+                                code: DELIVERY_TERMS
+                              list:
+                                - descriptor:
+                                    code: INCOTERMS
+                                  value: CIF
+                                - descriptor:
+                                    code: DELIVERY_DUTY
+                                  value: DDP
                       quote:
                         price:
                           currency: INR
@@ -649,6 +671,13 @@ paths:
                             beneficiary_name: xxxxx
                             bank_name: xxxx
                             branch_name: xxxx
+                      tags:
+                        - code: buyer_id
+                          list:
+                            - code: buyer_id_code
+                              value: gst
+                            - code: buyer_id_no
+                              value: xxxxxxxxxxxxxxx
                       created_at: '2023-02-03T09:30:00.000Z'
                       updated_at: '2023-02-03T09:30:00.000Z'
       responses:
@@ -1425,6 +1454,18 @@ paths:
                             - F1
                           quantity:
                             count: 200
+                          add-ons:
+                            - id: '78787723'
+                          tags:
+                            - descriptor:
+                                code: BUYER_TERMS
+                              list:
+                                - descriptor:
+                                    code: ITEM_REQ
+                                  value: free text on Item Customization
+                                - descriptor:
+                                    code: PACKAGING_REQ
+                                  value: free text on packaging Customization
                       billing:
                         name: ONDC buyer
                         address:
@@ -1458,6 +1499,16 @@ paths:
                                 area_code: '680230'
                             contact:
                               phone: '9886098860'
+                          tags:
+                            - descriptor:
+                                code: DELIVERY_TERMS
+                              list:
+                                - descriptor:
+                                    code: INCOTERMS
+                                  value: CIF
+                                - descriptor:
+                                    code: DELIVERY_DUTY
+                                  value: DDP
                       quote:
                         price:
                           currency: INR
@@ -1519,6 +1570,13 @@ paths:
                             settlement_ifsc_code: XXXXXXXXX
                             bank_name: xxxx
                             branch_name: xxxx
+                      tags:
+                        - code: buyer_id
+                          list:
+                            - code: buyer_id_code
+                              value: gst
+                            - code: buyer_id_no
+                              value: xxxxxxxxxxxxxxx
       responses:
         default:
           $ref: '#/paths/~1init/post/responses/default'
@@ -1590,6 +1648,18 @@ paths:
                             - F1
                           quantity:
                             count: 200
+                          add-ons:
+                            - id: '78787723'
+                          tags:
+                            - descriptor:
+                                code: BUYER_TERMS
+                              list:
+                                - descriptor:
+                                    code: ITEM_REQ
+                                  value: free text on Item Customization
+                                - descriptor:
+                                    code: PACKAGING_REQ
+                                  value: free text on packaging Customization
                       billing:
                         name: ONDC buyer
                         address:
@@ -1651,6 +1721,16 @@ paths:
                             contact:
                               phone: '9886098860'
                           rateable: true
+                          tags:
+                            - descriptor:
+                                code: DELIVERY_TERMS
+                              list:
+                                - descriptor:
+                                    code: INCOTERMS
+                                  value: CIF
+                                - descriptor:
+                                    code: DELIVERY_DUTY
+                                  value: DDP
                       quote:
                         price:
                           currency: INR
@@ -1719,6 +1799,13 @@ paths:
                             settlement_ifsc_code: XXXXXXXXX
                             bank_name: xxxx
                             branch_name: xxxx
+                      tags:
+                        - code: buyer_id
+                          list:
+                            - code: buyer_id_code
+                              value: gst
+                            - code: buyer_id_no
+                              value: xxxxxxxxxxxxxxx
                       created_at: '2023-02-03T09:30:00.000Z'
                       updated_at: '2023-02-03T09:31:30.000Z'
       responses:
@@ -4373,26 +4460,24 @@ x-tags:
         description: Description about the tags
         reference: <PR/Issue/Discussion Links md format text>
         list: *ref_0
-    fulfillments:
-      tags:
-        - code: ITEM_DETAILS
-          description: Description about the tags
-          reference: <PR/Issue/Discussion Links md format text>
-          list:
-            - code: ITEM_ID
-              description: Description about the tags
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: COUNT
-              description: Description about the tags
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: MEASURE_UNIT
-              description: Description about the tags
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: MEASURE_VALUE
-              description: Description about the tags
-              reference: <PR/Issue/Discussion Links md format text>
   fulfillments:
     tags:
+      - code: ITEM_DETAILS
+        description: Description about the tags
+        reference: <PR/Issue/Discussion Links md format text>
+        list:
+          - code: ITEM_ID
+            description: Description about the tags
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: COUNT
+            description: Description about the tags
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: MEASURE_UNIT
+            description: Description about the tags
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: MEASURE_VALUE
+            description: Description about the tags
+            reference: <PR/Issue/Discussion Links md format text>
       - code: DELIVERY_TERMS
         description: Description about the tags
         reference: <PR/Issue/Discussion Links md format text>
