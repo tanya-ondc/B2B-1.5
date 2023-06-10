@@ -3,10 +3,13 @@ description: Search By Fulfillment
 value:
   context:
     domain: ONDC:RET10
-    country: IND
-    city: std:080
+    location:
+      city:
+        code: std:080
+      country:
+        code: IND
     action: search
-    core_version: 2.0.1
+    version: 2.0.1
     bap_id: buyerapp.com
     bap_uri: https://buyerapp.com/grocery
     transaction_id: T1

@@ -1,10 +1,16 @@
 {
   "context": {
     "domain": "ONDC:RET10",
-    "country": "IND",
-    "city": "std:080",
+    "location": {
+      "city": {
+        "code": "std:080"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
     "action": "on_search",
-    "core_version": "1.5.0",
+    "version": "2.0.1",
     "bap_id": "buyerapp.com",
     "bap_uri": "https://buyerapp.com/grocery",
     "bpp_id": "sellerapp.com",
@@ -94,8 +100,7 @@
               "id":"ESG-12345678",
               "type": "License",
               "desc":"Export License No. ESG-12345678",
-              "url":"https://abcd.cdn.com/images/license-img",
-              "verify_url":"https://abcd.dnb.com/verify?id=’ESG-12345678'"
+              "url":"https://abcd.cdn.com/images/license-img"
             }
           ],
 

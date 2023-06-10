@@ -4,3 +4,5 @@ enum:
   $ref: "./enums/index.yaml"
 tags:
   $ref: "./tags/TagGroup.yaml"
+dictionary:
+  $ref: "./dictionary/index.yaml"

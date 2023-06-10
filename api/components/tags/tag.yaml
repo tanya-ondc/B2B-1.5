@@ -12,6 +12,26 @@ buyer_id:
   - code: BUYER_ID_NO
     description: Description about the tags
     reference: <PR/Issue/Discussion Links md format text>
+buyer_terms:
+  - code: ITEM_REQ
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: PACKAGING_REQ
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+item_details:
+  - code: ITEM_ID
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: COUNT
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: MEASURE_UNIT
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: MEASURE_VALUE
+    description: Description about the tags
+    reference: <PR/Issue/Discussion Links md format text>
 serviceability:
   - code: LOCATION
     description: Description about the tags
@@ -91,7 +111,6 @@ delivery_terms:
       - code: EXW
         description: about the enum
         reference: <PR/Issue/Discussion Links md format text>
-
   - code: DELIVERY_DUTY
     description: Description about the tags
     reference: <PR/Issue/Discussion Links md format text>

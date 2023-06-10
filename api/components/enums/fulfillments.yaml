@@ -1,4 +1,4 @@
-fulfillment:
+fulfillments:
   type:
     - code: Delivery
       description: about the enum

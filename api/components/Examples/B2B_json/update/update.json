@@ -2,10 +2,16 @@
     "context":
     {
       "domain":"ONDC:RET10",
-      "country":"IND",
-      "city":"std:080",
+      "location": {
+        "city": {
+          "code": "std:080"
+        },
+        "country": {
+          "code": "IND"
+        }
+      },
       "action":"update",
-      "core_version":"1.5.0",
+      "version":"2.0.1",
       "bap_id":"buyerapp.com",
       "bap_uri":"https://buyerapp.com/grocery",
       "bpp_id":"sellerapp.com",
